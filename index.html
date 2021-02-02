@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/styles.css">
+    <title>Calculator!</title>
+</head>
+<body>
+    <div id="mainDiv">
+        <table>
+            <tr>
+                <td colspan="5" id="answer" style="text-align: right; font-weight: bolder; font-size: xx-large; height: 6rem;"></td>
+            </tr>
+            <tr>
+                <td>2nd</td> <!---->
+                <td onclick="inputNumber('pi')">π</td>  <!---->
+                <td>e</td>  <!---->
+                <td onclick="clearCalc()">CE</td>
+                <td>DEL</td>  <!---->
+            </tr>
+            <tr>
+                <td onclick="square()">x<sup>2</sup></td>
+                <td onclick="reciprocal();">1/X</td>
+                <td onclick="absoluteVal();">|X|</td>
+                <td>exp</td> <!---->
+                <td onclick="inputOperation('mod')">mod</td>
+            </tr>
+            <tr>
+                <td onclick="sqrt();">√</td>
+                <td>(</td> <!---->
+                <td>)</td> <!---->
+                <td onclick="factorial();">n!</td>
+                <td onclick="inputOperation('/')">/</td>
+            </tr>
+            <tr>
+                <td onclick="inputOperation('power')">x<sup>y</sup></td>
+                <td onclick="inputNumber('7');">7</td>
+                <td onclick="inputNumber('8');">8</td>
+                <td onclick="inputNumber('9');">9</td>
+                <td onclick="inputOperation('*')">*</td>
+            </tr>
+            <tr>
+                <td>10<sup>X</sup></td>
+                <td onclick="inputNumber('4');">4</td>
+                <td onclick="inputNumber('5');">5</td>
+                <td onclick="inputNumber('6');">6</td>
+                <td onclick="inputOperation('-')">-</td>
+            </tr>
+            <tr>
+                <td>log</td> <!---->
+                <td onclick="inputNumber('1');">1</td>
+                <td onclick="inputNumber('2');">2</td>
+                <td onclick="inputNumber('3');">3</td>
+                <td onclick="inputOperation('+')">+</td>
+            </tr>
+            <tr>
+                <td>ln</td><!---->
+                <td onclick="switchSign();">+/-</td>
+                <td onclick="inputNumber('0');">0</td>
+                <td onclick="inputNumber('.')">.</td>
+                <td onclick="doMath();" colspan="2">=</td>
+            </tr>
+        </table>
+    </div>
+    <script src="js/scripts.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body{
+    text-align: center;
+}
+table, tr, td{
+    border: solid 2px black;
+}
+table{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+td{
+    width: 8rem;
+    height: 4rem;
+    vertical-align: middle;
+    font-size: xx-large;
+    background-color: white;
+}
+
+div#mainDiv{
+    width: 30rem;
+    background-color: brown;
+    border: 2px solid black;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 1.5rem;
+    text-align: center;
+}
