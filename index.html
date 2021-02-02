@@ -7,29 +7,30 @@
     <title>Calculator!</title>
 </head>
 <body>
+    <!--
     <div id="mainDiv">
         <table>
             <tr>
                 <td colspan="5" id="answer" style="text-align: right; font-weight: bolder; font-size: xx-large; height: 6rem;"></td>
             </tr>
             <tr>
-                <td>2nd</td> <!---->
-                <td onclick="inputNumber('pi')">π</td>  <!---->
-                <td>e</td>  <!---->
+                <td>2nd</td>
+                <td onclick="inputNumber('pi')">π</td>
+                <td>e</td>
                 <td onclick="clearCalc()">CE</td>
-                <td>DEL</td>  <!---->
+                <td>DEL</td>
             </tr>
             <tr>
                 <td onclick="square()">x<sup>2</sup></td>
                 <td onclick="reciprocal();">1/X</td>
                 <td onclick="absoluteVal();">|X|</td>
-                <td>exp</td> <!---->
+                <td>exp</td>
                 <td onclick="inputOperation('mod')">mod</td>
             </tr>
             <tr>
                 <td onclick="sqrt();">√</td>
-                <td>(</td> <!---->
-                <td>)</td> <!---->
+                <td>(</td>
+                <td>)</td>
                 <td onclick="factorial();">n!</td>
                 <td onclick="inputOperation('/')">/</td>
             </tr>
@@ -48,14 +49,14 @@
                 <td onclick="inputOperation('-')">-</td>
             </tr>
             <tr>
-                <td>log</td> <!---->
+                <td>log</td>
                 <td onclick="inputNumber('1');">1</td>
                 <td onclick="inputNumber('2');">2</td>
                 <td onclick="inputNumber('3');">3</td>
                 <td onclick="inputOperation('+')">+</td>
             </tr>
             <tr>
-                <td>ln</td><!---->
+                <td>ln</td>
                 <td onclick="switchSign();">+/-</td>
                 <td onclick="inputNumber('0');">0</td>
                 <td onclick="inputNumber('.')">.</td>
@@ -63,6 +64,63 @@
             </tr>
         </table>
     </div>
+-->
+<div id="mainDiv">
+    <table>
+        <tr>
+            <td colspan="5" id="answer" style="text-align: right; font-weight: bolder; font-size: xx-large; height: 6rem;">0</td>
+        </tr>
+        <tr>
+            <td class="unfinished">2nd</td>
+            <td onclick="pressButton('Math.PI');">π</td>
+            <td class="unfinished" onclick="pressButton('2.7182818284590452353602874713527')">e</td>
+            <td onclick="clearCalc();">CE</td>
+            <td onclick="deletion();">DEL</td>
+        </tr>
+        <tr>
+            <td onclick="square();">x<sup>2</sup></td>
+            <td onclick="reciprocal()">1/X</td>
+            <td class="bugged" onclick="absoluteVal()">|X|</td>
+            <td class="unfinished">exp</td>
+            <td onclick="pressButton(' % ')">mod</td>
+        </tr>
+        <tr>
+            <td onclick="sqrt();">√</td>
+            <td onclick="pressButton('\(')">(</td>
+            <td onclick="pressButton('\)')">)</td>
+            <td onclick="factorial();">n!</td>
+            <td onclick="pressButton(' / ')">/</td>
+        </tr>
+        <tr>
+            <td class="unfinished">x<sup>y</sup></td>
+            <td onclick="pressButton('7')">7</td>
+            <td onclick="pressButton('8')">8</td>
+            <td onclick="pressButton('9')">9</td>
+            <td onclick="pressButton(' * ')">*</td>
+        </tr>
+        <tr>
+            <td class="unfinished">10<sup>X</sup></td>
+            <td onclick="pressButton('4')">4</td>
+            <td onclick="pressButton('5')">5</td>
+            <td onclick="pressButton('6')">6</td>
+            <td onclick="pressButton(' - ')">-</td>
+        </tr>
+        <tr>
+            <td class="unfinished">log</td>
+            <td onclick="pressButton('1')">1</td>
+            <td onclick="pressButton('2')">2</td>
+            <td onclick="pressButton('3')">3</td>
+            <td onclick="pressButton(' + ')">+</td>
+        </tr>
+        <tr>
+            <td class="unfinished">ln</td>
+            <td class="bugged" onclick="changeSign();">+/-</td>
+            <td onclick="pressButton('0')">0</td>
+            <td onclick="pressButton('.')">.</td>
+            <td onclick="doMath();">=</td>
+        </tr>
+    </table>
+</div>
     <script src="js/scripts.js"></script>
 </body>
 </html>
