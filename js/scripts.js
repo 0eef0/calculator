@@ -62,12 +62,12 @@ function square(){
 function sqrt(){
     var temp = "";
     var arr = equation.split(' ');
-    var root = 0.5;
     if(shifted){
-        root = (1 / 3);
+        arr[arr.length-1] = Math.cbrt(arr[arr.length-1]).toString();
+    }else{
+        arr[arr.length-1] = Math.pow(arr[arr.length-1],0.5).toString();
     }
 
-    arr[arr.length-1] = Math.ceil(Math.pow(arr[arr.length-1],root)).toString();
     for(i = 0; i < arr.length; i++){
         temp += arr[i].toString();
     }
@@ -96,7 +96,7 @@ function absoluteVal(){
         temp += arr[i].toString();
     }
     equation = temp;
-    //mockEquation = temp;
+    mockEquation = temp;
     document.getElementById("answer").innerHTML = mockEquation;
 }
 function changeSign(){
