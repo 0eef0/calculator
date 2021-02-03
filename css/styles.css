@@ -17,6 +17,9 @@ td{
     font-size: xx-large;
     background-color: white;
 }
+td:hover{
+    background-color: #bbbbbb;
+}
 
 div#mainDiv{
     width: 30rem;

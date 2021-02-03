@@ -10,52 +10,52 @@
     <div id="mainDiv">
         <table>
             <tr>
-                <td colspan="5" id="answer" style="text-align: right; font-weight: bolder; font-size: xx-large; height: 6rem;">0</td>
+                <td colspan="5" id="answer" style="text-align: right; font-weight: bolder; font-size: xx-large; height: 6rem; word-break: break-all;">0</td>
             </tr>
             <tr>
-                <td class="unfinished">2nd</td>
+                <td onclick="shiftButton()">2nd</td>
                 <td class="bugged" onclick="pressButton('Math.PI');">π</td>
-                <td class="bugged" onclick="pressButton('2.7182818284590452353602874713527')">e</td>
+                <td onclick="pressButton('2.7182818284590452353602874713527')">e</td>
                 <td onclick="clearCalc();">CE</td>
                 <td onclick="deletion();">DEL</td>
             </tr>
             <tr>
-                <td onclick="square();">x<sup>2</sup></td>
+                <td onclick="square();" id="squareButton">x<sup>2</sup></td>
                 <td onclick="reciprocal()">1/X</td>
                 <td class="bugged" onclick="absoluteVal()">|X|</td>
                 <td onclick="exp();">exp</td>
                 <td onclick="pressButton(' % ')">mod</td>
             </tr>
             <tr>
-                <td onclick="sqrt();">√</td>
+                <td onclick="sqrt();" id="rootButton">√</td>
                 <td onclick="pressButton('\(')">(</td>
                 <td onclick="pressButton('\)')">)</td>
                 <td onclick="factorial();">n!</td>
                 <td onclick="pressButton(' / ')">/</td>
             </tr>
             <tr>
-                <td class="unfinished">x<sup>y</sup></td>
+                <td class="unfinished" id="customRootButton">x<sup>y</sup></td>
                 <td onclick="pressButton('7')">7</td>
                 <td onclick="pressButton('8')">8</td>
                 <td onclick="pressButton('9')">9</td>
                 <td onclick="pressButton(' * ')">*</td>
             </tr>
             <tr>
-                <td class="unfinished">10<sup>X</sup></td>
+                <td onclick="scientificNotation()" id="sciNotationButton">10<sup>X</sup></td>
                 <td onclick="pressButton('4')">4</td>
                 <td onclick="pressButton('5')">5</td>
                 <td onclick="pressButton('6')">6</td>
                 <td onclick="pressButton(' - ')">-</td>
             </tr>
             <tr>
-                <td class="unfinished">log</td>
+                <td class="unfinished" id="logButton">log</td>
                 <td onclick="pressButton('1')">1</td>
                 <td onclick="pressButton('2')">2</td>
                 <td onclick="pressButton('3')">3</td>
                 <td onclick="pressButton(' + ')">+</td>
             </tr>
             <tr>
-                <td class="unfinished">ln</td>
+                <td class="unfinished" id="naturalLogButton">ln</td>
                 <td class="bugged" onclick="changeSign();">+/-</td>
                 <td onclick="pressButton('0')">0</td>
                 <td onclick="pressButton('.')">.</td>

@@ -2,6 +2,7 @@ var equation = "";
 var mockEquation = "";
 
 var awaitingButton = false;
+var shifted = false;
 
 function pressButton(input){
     if(!awaitingButton){
@@ -45,8 +46,12 @@ function deletion(){
 function square(){
     var temp = "";
     var arr = equation.split(' ');
+    var power = 2;
+    if(shifted){
+        power = 3;
+    }
 
-    arr[arr.length-1] = Math.pow(arr[arr.length-1],2).toString();
+    arr[arr.length-1] = Math.pow(arr[arr.length-1],power).toString();
     for(i = 0; i < arr.length; i++){
         temp += arr[i].toString();
     }
@@ -57,8 +62,12 @@ function square(){
 function sqrt(){
     var temp = "";
     var arr = equation.split(' ');
+    var root = 0.5;
+    if(shifted){
+        root = (1 / 3);
+    }
 
-    arr[arr.length-1] = Math.pow(arr[arr.length-1],0.5).toString();
+    arr[arr.length-1] = Math.ceil(Math.pow(arr[arr.length-1],root)).toString();
     for(i = 0; i < arr.length; i++){
         temp += arr[i].toString();
     }
@@ -127,16 +136,48 @@ function exp2(input){
     var temp = "";
     var arr = equation.split(' ');
 
-    console.log(arr);
-
     arr[arr.length-1] = (arr[arr.length-1] * Math.pow(10,input));
 
-    console.log(arr);
     for(i = 0; i < arr.length; i++){
         temp += arr[i].toString();
     }
-    console.log(temp);
     equation = temp;
     mockEquation = temp;
     document.getElementById("answer").innerHTML = mockEquation;
+}
+function scientificNotation(){
+    var temp = "";
+    var arr = equation.split(' ');
+    var number = 10;
+    if(shifted){
+        number = 2;
+    }
+    arr[arr.length-1] = Math.pow(number, arr[arr.length-1]);
+
+    for(i = 0; i < arr.length; i++){
+        temp += arr[i].toString();
+    }
+    equation = temp;
+    mockEquation = temp;
+    document.getElementById("answer").innerHTML = mockEquation;
+}
+
+function shiftButton(){
+    if(!shifted){
+        document.getElementById("squareButton").innerHTML = "x<sup>3</sup>";
+        document.getElementById("rootButton").innerHTML = "<sup>3</sup>√";
+        document.getElementById("customRootButton").innerHTML = "<sup>y</sup>√x";
+        document.getElementById("sciNotationButton").innerHTML = "2<sup>x</sup>";
+        document.getElementById("logButton").innerHTML = "log<sub>y</sub>x";
+        document.getElementById("naturalLogButton").innerHTML = "e<sup>x</sup>";
+        shifted = true;
+    }else{
+        document.getElementById("squareButton").innerHTML = "x<sup>2</sup>";
+        document.getElementById("rootButton").innerHTML = "√";
+        document.getElementById("customRootButton").innerHTML = "x<sup>y</sup>";
+        document.getElementById("sciNotationButton").innerHTML = "10<sup>x</sup>";
+        document.getElementById("logButton").innerHTML = "log";
+        document.getElementById("naturalLogButton").innerHTML = "ln";
+        shifted = false;
+    }
 }
