@@ -3,6 +3,7 @@ var mockEquation = "";
 
 var awaitingButton = false;
 var shifted = false;
+var nextAction = '';
 
 function pressButton(input){
     if(!awaitingButton){
@@ -13,13 +14,26 @@ function pressButton(input){
             case input == "Math.PI":
                 mockEquation += "π";
                 break;
+            case input == "Math.E":
+                mockEquation += "e";
+                break;
             default:
                 mockEquation += input;
         }
         equation += input;
         document.getElementById("answer").innerHTML = mockEquation;
     }else{
-        exp2(input);
+        switch(true){
+            case nextAction == 'power':
+                customPower2(input);
+                break;
+            case nextAction == 'exp':
+                exp2(input);
+                break;
+            case nextAction == 'log':
+                logarithm2(input);
+                break;
+        }
         awaitingButton = false;
     }
 }
@@ -131,12 +145,67 @@ function exp(){
     mockEquation += ".e+0";
     document.getElementById("answer").innerHTML = mockEquation;
     awaitingButton = true;
+    nextAction = 'exp';
 }
 function exp2(input){
     var temp = "";
     var arr = equation.split(' ');
 
     arr[arr.length-1] = (arr[arr.length-1] * Math.pow(10,input));
+
+    for(i = 0; i < arr.length; i++){
+        temp += arr[i].toString();
+    }
+    equation = temp;
+    mockEquation = temp;
+    document.getElementById("answer").innerHTML = mockEquation;
+}
+function customPower(){
+    mockEquation += "^";
+    document.getElementById("answer").innerHTML = mockEquation;
+    awaitingButton = true;
+    nextAction = 'power';
+}
+function customPower2(input){
+    var temp = "";
+    var arr = equation.split(' ');
+
+    if(!shifted){
+        arr[arr.length-1] = Math.pow(arr[arr.length-1],input);
+    }else{
+        arr[arr.length-1] = Math.pow(arr[arr.length-1],1/input);
+    }
+
+    for(i = 0; i < arr.length; i++){
+        temp += arr[i].toString();
+    }
+    equation = temp;
+    mockEquation = temp;
+    document.getElementById("answer").innerHTML = mockEquation;
+}
+function logarithm(){
+    var temp = "";
+    var arr = equation.split(' ');
+    if(!shifted){
+        arr[arr.length-1] = Math.log10(arr[arr.length-1]);
+        for(i = 0; i < arr.length; i++){
+            temp += arr[i].toString();
+        }
+        equation = temp;
+        mockEquation = temp;
+        document.getElementById("answer").innerHTML = mockEquation;
+    }else{
+        mockEquation += "log base";
+        document.getElementById("answer").innerHTML = mockEquation;
+        awaitingButton = true;
+        nextAction = 'log';
+    }
+}
+function logarithm2(input){
+    var temp = "";
+    var arr = equation.split(' ');
+
+    arr[arr.length-1] = Math.log(input) / Math.log(arr[arr.length-1]); 
 
     for(i = 0; i < arr.length; i++){
         temp += arr[i].toString();
@@ -153,6 +222,22 @@ function scientificNotation(){
         number = 2;
     }
     arr[arr.length-1] = Math.pow(number, arr[arr.length-1]);
+
+    for(i = 0; i < arr.length; i++){
+        temp += arr[i].toString();
+    }
+    equation = temp;
+    mockEquation = temp;
+    document.getElementById("answer").innerHTML = mockEquation;
+}
+function naturalLog(){
+    var temp = "";
+    var arr = equation.split(' ');
+    if(!shifted){
+        arr[arr.length-1] = Math.log(arr[arr.length-1]);
+    }else{
+        arr[arr.length-1] = Math.pow(2.7182818284590452353602874713527, arr[arr.length-1]);
+    }
 
     for(i = 0; i < arr.length; i++){
         temp += arr[i].toString();

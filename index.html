@@ -14,8 +14,8 @@
             </tr>
             <tr>
                 <td onclick="shiftButton()">2nd</td>
-                <td class="bugged" onclick="pressButton('Math.PI');">π</td>
-                <td onclick="pressButton('2.7182818284590452353602874713527')">e</td>
+                <td onclick="pressButton('Math.PI');">π</td>
+                <td onclick="pressButton('Math.E')">e</td>
                 <td onclick="clearCalc();">CE</td>
                 <td onclick="deletion();">DEL</td>
             </tr>
@@ -34,7 +34,7 @@
                 <td onclick="pressButton(' / ')">/</td>
             </tr>
             <tr>
-                <td class="unfinished" id="customRootButton">x<sup>y</sup></td>
+                <td onclick="customPower()" id="customRootButton">x<sup>y</sup></td>
                 <td onclick="pressButton('7')">7</td>
                 <td onclick="pressButton('8')">8</td>
                 <td onclick="pressButton('9')">9</td>
@@ -48,14 +48,14 @@
                 <td onclick="pressButton(' - ')">-</td>
             </tr>
             <tr>
-                <td class="unfinished" id="logButton">log</td>
+                <td onclick="logarithm()" id="logButton">log</td>
                 <td onclick="pressButton('1')">1</td>
                 <td onclick="pressButton('2')">2</td>
                 <td onclick="pressButton('3')">3</td>
                 <td onclick="pressButton(' + ')">+</td>
             </tr>
             <tr>
-                <td class="unfinished" id="naturalLogButton">ln</td>
+                <td onclick="naturalLog()" id="naturalLogButton">ln</td>
                 <td onclick="changeSign();">+/-</td>
                 <td onclick="pressButton('0')">0</td>
                 <td onclick="pressButton('.')">.</td>
